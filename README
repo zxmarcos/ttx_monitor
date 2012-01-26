@@ -1,0 +1,76 @@
+    ________
+   /       /___    ___                         _        ____
+  /__   __/_\  \  /  /       __    _______   _ _ ______| __ |
+    /  /_   _\  \/  /       |\ \  /| |    |\ \| |  _/  | |/ /
+   /  / /  / /  /\  \  ___  | \ \/ | | || | \ | | | || |   \
+  /__/ /__/ /__/  \__\ |__| |_\\//_| |____|_|\|_|_|____|_|\_\
+
+
+TTX_Monitor: loader aberto para ArcadePC's TaitoTypeX
+------------------------------------------------------------------------------------------------
+ Autor: Romhack
+ Site: www.snk-neofighters.info
+
+
+HISTÓRIA:
+    A idéia de criar um loader opensource para os arcadepc's ttx se deu quando a
+    www.snk-neofighters.info liberou com exclusividade o dump de Samurai Spirits Sen; Naquele
+    momento, não havia loader que o conseguisse rodar, me veio o interesse de tentar fazer algo.
+    Depois de um pouco de engenharia reversa consegui que o jogo rodasse sem problemas,
+    mas ficou evidente que precisaria de algo melhor para termos suporte a video em alta
+    resolução e controles reconfiguráveis. Foi então que eu comecei a escrever esse loader.
+    A princípio a idéia era criar um server que ficaria fazendo o listening na porta serial
+    COM2, onde a JVS é conectada, no entando essa estratégia se mostrou falha, pois é necessário,
+    um controle total sobre o fluxo de dados entre o programa e a JVS. Logo, comecei a implementar
+    um sistema baseado na interceptação das API's do Windows que são chamadas para realizar tais
+    tarefas.
+    Depois de ter passado muitas horas, fazendo debugging e engenharia reversa, enfim consegui que
+    alguns jogos rodassem, porém sem nenhum recurso descente.
+    Na base da engenharia reversa implementei o primeiro suporte a controles, mas o código tinha
+    uma aparência totalmente de um "hack". Foi então que MetalliC me enviou a documentação da JVS,
+    que resultou nesse loader.
+
+
+Versão 1.0rc3 (05/10/2011)
+------------------------------------------------------------------------------------------------
+  * ttx_config reescrito, agora utilizando GUI, bem mais fácil de configurar as opções do loader.
+
+Versão 1.0rc2 (20/09/2011)
+------------------------------------------------------------------------------------------------
+ BUGFIXES:
+  * Bug no botão de coin para o player2 arrumado.
+  * Bug em Matrimelee Matsuri consertado, conflito entre os controles do loader e os internos
+    do jogo.
+  * Bug ao apertar os botões 3+4+6 resolvido, gerava uma stream com crc inválido fazendo
+    com que os jogos travassem e mostrassem uma mensagem de erro da JVS.
+
+Versão 1.0rc (19/09/2011)
+------------------------------------------------------------------------------------------------
+
+SUPORTE:
+  * Suporte a carregar os jogos em alta resolução, quando disponível.
+  * Suporte a controles reconfiguráveis, atráves do ttx_config.exe (DirectInput backend)
+  
+ 
+AGRADECIMENTOS:
+  * Vivek Thampi pelo udis86, dissambler utilizado para fazer hooking das funções do windows.
+  * windslashkun por ter me doado uma vga e memória pra que isso fosse possível :)
+  * MetalliC por de fornecer a documentação da JVS.
+  * A todos da www.snk-neofighters.info, sem eles, isso não seria possível também.
+  
+------------------------------------------------------------------------------------------------
+
+ loader.exe:
+    Carrega o jogo e injeta a ttx_monitor, é o que chamamos de loader.
+
+ ttx_config.exe:
+    Configura os controles dos jogos e algumas opções.
+    Gera dois arquivos, monitor_input.bin e monitor_misc.bin, o primeiro contém as definições
+    dos controles, já o segundo definições das opções configuradas.
+
+ ttx_monitor.dll:
+    O núcleo do loader, módulo encarregado de fazer hooking das API's, emular a JVS,
+    criar uma interface fake do DirectInput para os jogos não terem acesso ao verdadeiro, etc...
+
+	
+  
