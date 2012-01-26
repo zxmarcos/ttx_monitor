@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ttx_monitor", "ttx_monitor\ttx_monitor.vcproj", "{76B384A0-81EB-4B2D-81A0-72D35536A696}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ttx_loader", "loader\loader.vcproj", "{B086287D-DE3C-4D5F-BDC1-5BE54571E4EA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ttx_config2.0", "ttx_config2.0\ttx_config2.0.vcproj", "{19DF7195-A9C3-4DE0-A8F5-6B335117369A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76B384A0-81EB-4B2D-81A0-72D35536A696}.Debug|Win32.ActiveCfg = Debug|Win32
+		{76B384A0-81EB-4B2D-81A0-72D35536A696}.Debug|Win32.Build.0 = Debug|Win32
+		{76B384A0-81EB-4B2D-81A0-72D35536A696}.Release|Win32.ActiveCfg = Release|Win32
+		{76B384A0-81EB-4B2D-81A0-72D35536A696}.Release|Win32.Build.0 = Release|Win32
+		{B086287D-DE3C-4D5F-BDC1-5BE54571E4EA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B086287D-DE3C-4D5F-BDC1-5BE54571E4EA}.Debug|Win32.Build.0 = Debug|Win32
+		{B086287D-DE3C-4D5F-BDC1-5BE54571E4EA}.Release|Win32.ActiveCfg = Release|Win32
+		{B086287D-DE3C-4D5F-BDC1-5BE54571E4EA}.Release|Win32.Build.0 = Release|Win32
+		{19DF7195-A9C3-4DE0-A8F5-6B335117369A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{19DF7195-A9C3-4DE0-A8F5-6B335117369A}.Debug|Win32.Build.0 = Debug|Win32
+		{19DF7195-A9C3-4DE0-A8F5-6B335117369A}.Release|Win32.ActiveCfg = Release|Win32
+		{19DF7195-A9C3-4DE0-A8F5-6B335117369A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
