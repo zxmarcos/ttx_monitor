@@ -60,7 +60,7 @@ AGRADECIMENTOS:
   
 ------------------------------------------------------------------------------------------------
 
- loader.exe:
+ ttx_loader.exe:
     Carrega o jogo e injeta a ttx_monitor, é o que chamamos de loader.
 
  ttx_config.exe:
